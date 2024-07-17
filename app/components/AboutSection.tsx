@@ -37,8 +37,8 @@ export default AboutSection;
 
 const GradientComponent = () => {
   return (
-    <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 mt-[-1rem]">
-      <div className="container mx-auto flex justify-between space-x-4">
+    <div className="hidden md:flex bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 ">
+      <div className="container mx-auto flex flex-wrap justify-between md:space-x-4">
         {[
           "Tense",
           "Romantic",
@@ -52,7 +52,7 @@ const GradientComponent = () => {
           "Lively",
           "Gospel",
         ].map((item, index) => (
-          <span key={index} className="px-2 text-xl">
+          <span key={index} className="px-2 text-xl whitespace-nowrap">
             {item}
           </span>
         ))}

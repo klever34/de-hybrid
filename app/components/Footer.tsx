@@ -62,7 +62,7 @@ const Footer: FC = () => {
         </div>
       </div>
       <div className="border-t border-gray-700 pt-4 flex justify-between items-center">
-        <div>© 2023 De-Hybrid. All rights reserved.</div>
+        <div>©{new Date().getFullYear()} De-Hybrid. All rights reserved.</div>
         <div className="flex space-x-4">
           <a href="#" className="hover:underline">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

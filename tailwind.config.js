@@ -13,6 +13,11 @@ module.exports = {
     flowbite.content(),
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+    },
     colors: {
       primary: "#056CF2",
       danger: "#F57068",
@@ -26,11 +31,6 @@ module.exports = {
       "fb-black": {
         100: "#000000",
       },
-    },
-    fontFamily: {
-      display: ["Inter"],
-      html: ["Inter"],
-      body: ["Inter"],
     },
   },
   plugins: [require("flowbite/plugin"), flowbite.plugin()],

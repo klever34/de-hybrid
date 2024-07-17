@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CustomNavBar } from "./CustomNavBar";
+import CustomNavBar from "./CustomNavBar";
 import Footer from "./Footer";
 
 interface BaseLayoutProps {
