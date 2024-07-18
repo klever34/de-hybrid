@@ -18,8 +18,8 @@ const AboutSection: FC = () => {
             height={400}
           />
         </div>
-        <div className="max-w-lg">
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold text-white mb-4">
+        <div className="max-w-lg md:ml-6">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold text-white mb-4 md:ml-8">
             About Us
           </h2>
           <p className="text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg text-white mb-8 font-light px-8">
@@ -29,7 +29,7 @@ const AboutSection: FC = () => {
             pulvinar eget nulla. Tempor auctor habitant dignissim mi mauris
             habitasse eu malesuada.
           </p>
-          <button className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-10 py-4 rounded-full hover:bg-orange-700 transition">
+          <button className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-10 py-4 rounded-full hover:bg-orange-700 transition md:ml-8">
             Read more
           </button>
         </div>
