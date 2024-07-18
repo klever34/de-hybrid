@@ -10,28 +10,34 @@ const albums = Array(8).fill({
 
 const BooksCollection: FC = () => {
   return (
-    <section className="py-16 bg-fb-grey-950 text-white">
+    <section id="books" className="py-16 bg-fb-grey-950 text-white">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-8">BOOK COLLECTION</h2>
+        <h2 className="text-3xl md:4xl font-bold mb-8 text-center md:text-left">
+          BOOK COLLECTIONS
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {albums.map((album, index) => (
             <div key={index} className="bg-fb-grey-900 rounded-lg p-4">
-              <Image
-                src={album.imageUrl}
-                alt={album.title}
-                className="rounded-lg mb-4 w-full"
-                width={100}
-                height={100}
-              />
-              <div className="text-sm text-gray-400">ALBUM</div>
-              <h3 className="text-xl font-bold">{album.title}</h3>
-              <div className="text-gray-400">{album.author}</div>
-              <div className="text-orange-500 font-bold mt-2">
-                {album.price}
+              <div className="w-full p-6 md:p-0">
+                <Image
+                  src={album.imageUrl}
+                  alt={album.title}
+                  className="rounded-lg mb-4 w-full"
+                  width={100}
+                  height={100}
+                />
               </div>
-              <button className="bg-orange-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-orange-600 transition">
-                Add to Cart
-              </button>
+              <div className="text-center md:text-left">
+                <div className="text-sm text-gray-400">ALBUM</div>
+                <h3 className="text-xl font-bold">{album.title}</h3>
+                <div className="text-gray-400">{album.author}</div>
+                <div className="text-orange-500 font-bold mt-2">
+                  {album.price}
+                </div>
+                <button className="bg-orange-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-orange-600 transition">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           ))}
         </div>

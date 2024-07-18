@@ -5,19 +5,24 @@ const AboutSection: FC = () => {
   return (
     <>
       <GradientComponent />
-      <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-24 bg-black">
-        <div className="">
+      <section
+        id="about"
+        className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-24 bg-black"
+      >
+        <div className="px-8 md:px-0 mb-8">
           <Image
             src="/listening-man.png"
             alt="Person with headphones"
-            className="rounded-lg mr-20"
-            width={600}
-            height={500}
+            className="rounded-lg"
+            width={400}
+            height={400}
           />
         </div>
         <div className="max-w-lg">
-          <h2 className="text-4xl font-bold text-white mb-4">About Us</h2>
-          <p className="text-lg text-white mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold text-white mb-4">
+            About Us
+          </h2>
+          <p className="text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg text-white mb-8 font-light px-8">
             Lorem ipsum dolor sit amet consectetur. Quam risus purus volutpat
             elit pellentesque quam proin pulvinar. Feugiat egestas turpis
             faucibus gravida pharetra egestas viverra. Praesent amet quis

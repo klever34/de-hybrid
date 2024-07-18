@@ -5,7 +5,7 @@ const Footer: FC = () => {
     <div className="container mx-auto">
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center space-x-4">
-          <div className="text-2xl font-bold">De-hybrid</div>
+          <div className="text-2xl font-bold">De-Hybrid</div>
         </div>
         <div className="flex flex-col items-left items-end justify-start space-x-4">
           <a href="#" className="hover:underline">
@@ -24,7 +24,7 @@ const Footer: FC = () => {
             About us
           </a>
         </div>
-        <div className="flex flex-col items-left items-end justify-start space-x-4">
+        {/* <div className="flex flex-col items-left items-end justify-start space-x-4">
           <a href="#" className="hover:underline">
             Payment
           </a>
@@ -40,7 +40,7 @@ const Footer: FC = () => {
           <a href="#" className="hover:underline">
             FAQ
           </a>
-        </div>
+        </div> */}
         <div className="flex flex-col items-left items-end justify-start space-x-4">
           <a href="#" className="hover:underline">
             News
@@ -49,7 +49,7 @@ const Footer: FC = () => {
             Collections
           </a>
           <a href="#" className="hover:underline">
-            Terms & conditions
+            Terms
           </a>
         </div>
         <div className="flex flex-col items-left items-end justify-start space-x-4">

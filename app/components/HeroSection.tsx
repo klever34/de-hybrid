@@ -12,7 +12,7 @@ const HeroSection: FC = () => {
       <div className="relative container mx-auto">
         <div className="flex items-center pt-20">
           <div className="w-full md:w-1/2 justify-center text-white p-5">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
               {"ROCK 'N' READ"}
             </h1>
             <p className="pt-10 text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl">
@@ -21,9 +21,9 @@ const HeroSection: FC = () => {
               nesciunt ea. Ducimus eos in aliquam sunt et numquam eligendi alias
               sequi optio.
             </p>
-            <button className="mt-10 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full flex items-center space-x-2 hover:bg-orange-700 transition">
+            <button className="mt-10 bg-orange-500 text-white rounded-full flex items-center space-x-2 hover:bg-orange-600 transition">
               <span className="px-6 py-3">Get started now</span>
-              <div className="bg-white text-orange-600 rounded-full p-2">
+              <div className="bg-white text-orange-600 rounded-full p-4">
                 <FaArrowRight size={20} />
               </div>
             </button>
