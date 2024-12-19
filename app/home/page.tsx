@@ -11,7 +11,7 @@ const Home = (): JSX.Element => {
       <HeroSection />
       <AboutSection />
       <MusicCollection />
-      <BooksCollection />
+      {/* <BooksCollection /> */}
     </>
   );
 };
