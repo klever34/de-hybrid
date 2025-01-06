@@ -145,12 +145,12 @@ const MusicCollection: FC = () => {
                 <div className="text-orange-500 font-bold mt-2">
                   {album.price}
                 </div>
-                <button
+                {/* <button
                   className="bg-orange-500 text-white px-2 py-2 rounded-lg mt-4 hover:bg-orange-600 transition"
                   style={{ fontSize: 10 }}
                 >
                   Add to Cart
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

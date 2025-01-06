@@ -11,7 +11,7 @@ const AboutSection: FC = () => {
       >
         <div className="px-8 md:px-0 mb-8">
           <Image
-            src="/listening-man.png"
+            src="/sir_roy.jpeg"
             alt="Person with headphones"
             className="rounded-lg"
             width={400}
@@ -23,11 +23,15 @@ const AboutSection: FC = () => {
             About Us
           </h2>
           <p className="text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg text-white mb-8 font-light px-8">
-            Lorem ipsum dolor sit amet consectetur. Quam risus purus volutpat
-            elit pellentesque quam proin pulvinar. Feugiat egestas turpis
-            faucibus gravida pharetra egestas viverra. Praesent amet quis
-            pulvinar eget nulla. Tempor auctor habitant dignissim mi mauris
-            habitasse eu malesuada.
+            {`Robinson Roy Odoko, popularly known as Roy, is a former Nigerian
+            national tennis player and a product of the prestigious Government
+            College Ughelli, Delta State. Roy Odoko is an accomplished author.
+            He wrote the first comprehensive tennis book in Nigeria, "Tennis for
+            Health and Wealth". Roy Odoko is also a music writer, music composer
+            and music producer who has so many songs in his repertoire; and he
+            is a member of the Musical Copyright Society of Nigeria (MCSN). Roy
+            Odoko is the leader of De-Hybrid Band, a recording but not a
+            performing musical band.`}
           </p>
           <button className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-10 py-4 rounded-full hover:bg-orange-700 transition md:ml-8">
             Read more
