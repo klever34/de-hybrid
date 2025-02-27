@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import BaseLayout from "@components/BaseLayout";
+import { AppContextProvider } from "@context/AppContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en" className={poppins.className}>
       <body>
         <main className="w-screen h-screen bg-black">
-          <BaseLayout>{children}</BaseLayout>
+          <AppContextProvider>
+            <BaseLayout>{children}</BaseLayout>
+          </AppContextProvider>
         </main>
       </body>
     </html>

@@ -2,31 +2,33 @@
 
 import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineShoppingCart } from "react-icons/md";
-
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
+import AppContext from "@context/AppContext";
 
 const CustomNavBar = () => {
   const [nav, setNav] = useState(false);
+  const { data } = useContext(AppContext);
+  const cartItemCount = data.cart.totalCount;
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   const navItems = [
-    { id: 1, text: "Home", href: "#" },
-    { id: 2, text: "Music", href: "#music" },
-    { id: 3, text: "Books", href: "#books" },
-    { id: 4, text: "About Us", href: "#about" },
+    { id: 1, text: "Home", href: "/home" },
+    { id: 2, text: "Music", href: "/home#music" },
+    { id: 3, text: "Books", href: "/home#books" },
+    { id: 4, text: "About Us", href: "/home#about" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-black text-white text-center z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center py-4">
+          {/* Logo */}
           <div className="flex items-center pl-4 md:pl-0">
             <Image
               src={"/dehybrid.png"}
@@ -36,6 +38,8 @@ const CustomNavBar = () => {
             />
             <div className="text-lg md:text-2xl font-bold">De-Hybrid</div>
           </div>
+
+          {/* Desktop Navigation */}
           <ul className="hidden md:flex">
             {navItems.map((item) => (
               <li
@@ -46,10 +50,21 @@ const CustomNavBar = () => {
               </li>
             ))}
           </ul>
-          <div className="flex space-between hidden md:flex">
-            <IoSearch className="mr-5" size={24} />
-            <MdOutlineShoppingCart size={24} />
+
+          {/* Search & Cart Icons */}
+          <div className="flex space-x-6 hidden md:flex">
+            <IoSearch size={24} />
+            <Link href="/cart" className="relative">
+              <MdOutlineShoppingCart size={28} />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartItemCount}
+                </span>
+              )}
+            </Link>
           </div>
+
+          {/* Mobile Menu Button */}
           <div onClick={handleNav} className="block md:hidden pr-4 md:pr-0">
             {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
           </div>
@@ -58,18 +73,15 @@ const CustomNavBar = () => {
 
       {/* Mobile Navigation Menu */}
       <ul
-        className={
-          nav
-            ? "fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-        }
+        className={`fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-gray-900 bg-[#000300] ease-in-out duration-500 ${
+          nav ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         {/* Mobile Logo */}
         <div className="pt-8 mb-8 flex justify-center">
           <Image
             src={"/dehybrid.png"}
             alt={"De-Hybrid Logo"}
-            // className="w-full"
             width={50}
             height={50}
           />
@@ -86,6 +98,18 @@ const CustomNavBar = () => {
             <Link href={item.href}>{item.text}</Link>
           </li>
         ))}
+
+        {/* Mobile Cart Icon */}
+        <li className="p-4 flex items-center justify-center">
+          <Link href="/cart" className="relative flex items-center">
+            <MdOutlineShoppingCart size={28} />
+            {cartItemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                {cartItemCount}
+              </span>
+            )}
+          </Link>
+        </li>
       </ul>
     </nav>
   );
