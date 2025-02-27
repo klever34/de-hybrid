@@ -27,9 +27,9 @@ const CustomNavBar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-black text-white text-center z-50">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-4 px-4">
           {/* Logo */}
-          <div className="flex items-center pl-4 md:pl-0">
+          <div className="flex items-center">
             <Image
               src={"/dehybrid.png"}
               alt={"De-Hybrid Logo"}
@@ -51,10 +51,10 @@ const CustomNavBar = () => {
             ))}
           </ul>
 
-          {/* Search & Cart Icons */}
-          <div className="flex space-x-6 hidden md:flex">
-            <IoSearch size={24} />
-            <Link href="/cart" className="relative">
+          {/* Search & Cart Icons (Now visible on all screen sizes) */}
+          <div className="flex space-x-6 items-center">
+            <IoSearch size={24} className="cursor-pointer hidden md:block" />
+            <Link href="/cart" className="relative flex items-center">
               <MdOutlineShoppingCart size={28} />
               {cartItemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
@@ -62,11 +62,10 @@ const CustomNavBar = () => {
                 </span>
               )}
             </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div onClick={handleNav} className="block md:hidden pr-4 md:pr-0">
-            {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+            {/* Mobile Menu Button */}
+            <div onClick={handleNav} className="block md:hidden">
+              {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+            </div>
           </div>
         </div>
       </div>
@@ -98,18 +97,6 @@ const CustomNavBar = () => {
             <Link href={item.href}>{item.text}</Link>
           </li>
         ))}
-
-        {/* Mobile Cart Icon */}
-        <li className="p-4 flex items-center justify-center">
-          <Link href="/cart" className="relative flex items-center">
-            <MdOutlineShoppingCart size={28} />
-            {cartItemCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                {cartItemCount}
-              </span>
-            )}
-          </Link>
-        </li>
       </ul>
     </nav>
   );

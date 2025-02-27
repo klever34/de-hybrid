@@ -64,7 +64,7 @@ const Cart: FC = () => {
   };
 
   return (
-    <section className="py-16 bg-black text-white">
+    <section className="py-16 px-6 bg-black text-white">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8">CART</h2>
 
