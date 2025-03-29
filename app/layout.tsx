@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
 import BaseLayout from "@components/BaseLayout";
 import { AppContextProvider } from "@context/AppContext";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "De-Hybrid",
@@ -20,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.className}>
+    <html lang="en" className="font-[Poppins]">
       <body>
         <main className="w-screen h-screen bg-black">
           <AppContextProvider>

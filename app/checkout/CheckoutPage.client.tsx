@@ -18,11 +18,11 @@ type PaystackReferenceResponse = {
 };
 
 const Checkout: FC = () => {
-  const { data } = useContext(AppContext);
+  const { data, setGlobalState } = useContext(AppContext);
   const { cart } = data;
   const router = useRouter();
 
-  const deliveryFee = 2000;
+  const deliveryFee = 0;
   const totalAmount = cart.totalAmount + deliveryFee;
 
   // Form State
@@ -43,14 +43,84 @@ const Checkout: FC = () => {
     publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY ?? "",
   });
 
-  // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const generateOrderTable = () => {
+    return `
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="text-align: left; padding: 8px;">Title</th>
+          <th style="text-align: left; padding: 8px;">Artist</th>
+          <th style="text-align: left; padding: 8px;">Qty</th>
+          <th style="text-align: left; padding: 8px;">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${cart.book
+          .map(
+            (item) => `
+          <tr>
+            <td style="padding: 8px;">${item.title}</td>
+            <td style="padding: 8px;">${item.artist}</td>
+            <td style="padding: 8px;">${item.quantity ?? 1}</td>
+            <td style="padding: 8px;">${formatToNaira(item.price)}</td>
+          </tr>
+        `
+          )
+          .join("")}
+      </tbody>
+    </table>
+  `;
+  };
+
   const onSuccess = () => async (reference: PaystackReferenceResponse) => {
     if (reference.status === "success") {
-      alert(`Payment was successful`);
+      const orderTable = generateOrderTable();
+
+      const htmlContent = `
+      <div>
+        <h2>Thank you for your purchase, ${form.firstName}!</h2>
+        <p><strong>Order total:</strong> ${formatToNaira(totalAmount)}</p>
+        <p><strong>Delivery Address:</strong> ${form.address}, ${form.city}, ${form.state}</p>
+        <p><strong>Phone number:</strong> ${form.phone}</p>
+        ${orderTable}
+        <p style="margin-top: 20px;">We’ll contact you shortly with your delivery details. Thank you for shopping with <strong>De-Hybrid</strong>!</p>
+      </div>
+    `;
+
+      // Send email to customer
+      await fetch("/api/send-email", {
+        method: "POST",
+        body: JSON.stringify({
+          to: form.email,
+          subject: "Your De-Hybrid Order Confirmation",
+          html: htmlContent,
+        }),
+      });
+
+      await fetch("/api/send-email", {
+        method: "POST",
+        body: JSON.stringify({
+          to: "royodoko@gmail.com",
+          subject: `New Order from ${form.firstName} ${form.lastName}`,
+          html: htmlContent,
+        }),
+      });
+
+      setGlobalState((prev) => ({
+        ...prev,
+        cart: {
+          book: [],
+          totalAmount: 0,
+          totalCount: 0,
+        },
+      }));
+
+      alert("Payment was successful!");
+      router.push("/");
     } else {
       alert(`Payment was unsuccessful`);
     }
@@ -58,7 +128,6 @@ const Checkout: FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Checkout Data:", form);
 
     initializePayment({ onSuccess: onSuccess(), onClose });
   };

@@ -1,9 +1,9 @@
 "use client";
 
 import AboutSection from "@components/AboutSection";
-import BooksCollection from "@components/BooksCollection";
 import HeroSection from "@components/HeroSection";
 import MusicCollection from "@components/MusicCollection";
+import VideosCollection from "@components/VideosCollection";
 
 const Home = (): JSX.Element => {
   return (
@@ -11,6 +11,7 @@ const Home = (): JSX.Element => {
       <HeroSection />
       <AboutSection />
       <MusicCollection />
+      <VideosCollection />
       {/* <BooksCollection /> */}
     </>
   );

@@ -18,6 +18,8 @@ export interface GlobalData {
   deliveryAddress?: string;
   cart: {
     book: Book[];
+    // music: Book[];
+    // video: Book[];
     totalAmount: number;
     totalCount: number;
   };
@@ -35,6 +37,8 @@ const AppContext = createContext<AppContextData>({
     deliveryAddress: "",
     cart: {
       book: [],
+      // music: [],
+      // video: [],
       totalAmount: 0,
       totalCount: 0,
     },
@@ -54,6 +58,8 @@ export const AppContextProvider: FC<PropsWithChildren> = ({ children }) => {
             deliveryAddress: "",
             cart: {
               book: [],
+              // music: [],
+              // video: [],
               totalAmount: 0,
               totalCount: 0,
             },
@@ -65,6 +71,8 @@ export const AppContextProvider: FC<PropsWithChildren> = ({ children }) => {
       deliveryAddress: "",
       cart: {
         book: [],
+        // music: [],
+        // video: [],
         totalAmount: 0,
         totalCount: 0,
       },

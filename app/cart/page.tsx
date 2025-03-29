@@ -10,17 +10,17 @@ const Cart: FC = () => {
   const { cart } = data;
   const router = useRouter();
 
-  const deliveryFee = 2000;
+  const deliveryFee = 0;
 
   const handleQuantityChange = (bookId: string, delta: number) => {
     setGlobalState((prevState) => {
-      const updatedCart = prevState.cart.book.map((item) =>
+      const updatedCart = prevState?.cart?.book?.map((item) =>
         item.id === bookId
           ? { ...item, quantity: Math.max(1, (item.quantity ?? 1) + delta) }
           : item
       );
 
-      const updatedTotalAmount = updatedCart.reduce(
+      const updatedTotalAmount = updatedCart?.reduce(
         (sum, item) => sum + item.price * (item.quantity ?? 1),
         0
       );
@@ -41,10 +41,10 @@ const Cart: FC = () => {
 
   const handleRemoveItem = (bookId: string) => {
     setGlobalState((prevState) => {
-      const updatedCart = prevState.cart.book.filter(
+      const updatedCart = prevState?.cart?.book?.filter(
         (item) => item.id !== bookId
       );
-      const updatedTotalAmount = updatedCart.reduce(
+      const updatedTotalAmount = updatedCart?.reduce(
         (sum, item) => sum + item.price * (item.quantity ?? 1),
         0
       );
@@ -54,7 +54,7 @@ const Cart: FC = () => {
         cart: {
           book: updatedCart,
           totalAmount: updatedTotalAmount,
-          totalCount: updatedCart.reduce(
+          totalCount: updatedCart?.reduce(
             (count, item) => count + (item.quantity ?? 1),
             0
           ),
@@ -71,10 +71,10 @@ const Cart: FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Cart Items */}
           <div className="md:col-span-2">
-            {cart.book.length === 0 ? (
+            {cart?.book?.length === 0 ? (
               <p className="text-center text-gray-400">Your cart is empty.</p>
             ) : (
-              cart.book.map((item) => (
+              cart?.book?.map((item) => (
                 <div
                   key={item.id}
                   className="bg-gray-900 p-4 rounded-lg flex items-center gap-4"
@@ -126,10 +126,10 @@ const Cart: FC = () => {
               <span>Sub Total</span>
               <span>₦{cart.totalAmount.toFixed(2)}</span>
             </p>
-            <p className="flex justify-between text-gray-400">
+            {/* <p className="flex justify-between text-gray-400">
               <span>Delivery</span>
               <span>₦{deliveryFee.toFixed(2)}</span>
-            </p>
+            </p> */}
             <p className="flex justify-between text-orange-500 font-bold text-lg mt-2">
               <span>Total</span>
               <span>₦{(cart.totalAmount + deliveryFee).toFixed(2)}</span>
