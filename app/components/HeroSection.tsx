@@ -15,7 +15,7 @@ const HeroSection: FC = () => {
         <div className="flex items-center pt-10 md:pt-20">
           <div className="w-full md:w-1/2 justify-center text-white p-5">
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
-              {"ROCK 'N' READ"}
+              {"MUSIC 'N' BOOKS"}
             </h1>
             <p className="pt-10 text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl">
               De-Hybrid Music - All songs written and composed by Roy Odoko (a

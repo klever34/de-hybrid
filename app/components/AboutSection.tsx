@@ -7,7 +7,7 @@ const AboutSection: FC = () => {
       <GradientComponent />
       <section
         id="about"
-        className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-24 bg-black"
+        className="flex flex-col md:flex-row items-center justify-center text-center md:text-left pt-10 pb-24 bg-black"
       >
         <div className="px-8 md:px-0 mb-8">
           <Image
