@@ -40,7 +40,7 @@ const Checkout: FC = () => {
     reference: new Date().getTime().toString(),
     email: form?.email,
     amount: totalAmount * 100,
-    publicKey: process.env.PAYSTACK_PUBLIC_KEY ?? "",
+    publicKey: "pk_live_9bbd706fd4fee9352386d4256e1bbf1b73490616",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
