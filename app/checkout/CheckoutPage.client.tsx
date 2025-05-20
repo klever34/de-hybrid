@@ -40,7 +40,7 @@ const Checkout: FC = () => {
     reference: new Date().getTime().toString(),
     email: form?.email,
     amount: totalAmount * 100,
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY ?? "",
+    publicKey: process.env.PAYSTACK_PUBLIC_KEY ?? "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,7 +84,9 @@ const Checkout: FC = () => {
       <div>
         <h2>Thank you for your purchase, ${form.firstName}!</h2>
         <p><strong>Order total:</strong> ${formatToNaira(totalAmount)}</p>
-        <p><strong>Delivery Address:</strong> ${form.address}, ${form.city}, ${form.state}</p>
+        <p><strong>Delivery Address:</strong> ${form.address}, ${form.city}, ${
+        form.state
+      }</p>
         <p><strong>Phone number:</strong> ${form.phone}</p>
         ${orderTable}
         <p style="margin-top: 20px;">We’ll contact you shortly with your delivery details. Thank you for shopping with <strong>De-Hybrid</strong>!</p>
