@@ -4,7 +4,7 @@ import "react-img-carousel/lib/carousel.css"; // Required CSS
 
 const PromoSlider = () => {
   return (
-    <div className="container mx-auto mt-10" style={{ maxWidth: 500 }}>
+    <div className="container mx-auto mt-10" style={{ maxWidth: 400 }}>
       <Carousel
         viewportWidth="100%"
         dots={false}

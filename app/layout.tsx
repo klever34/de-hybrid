@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import "./globals.css";
 import BaseLayout from "@components/BaseLayout";
 import { AppContextProvider } from "@context/AppContext";
-
-export const metadata: Metadata = {
-  title: "De-Hybrid",
-  description: "Buy audios and books online",
-};
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function RootLayout({
   children,
@@ -21,6 +18,7 @@ export default function RootLayout({
             <BaseLayout>{children}</BaseLayout>
           </AppContextProvider>
         </main>
+        <GoogleAnalytics trackPageViews />
       </body>
     </html>
   );

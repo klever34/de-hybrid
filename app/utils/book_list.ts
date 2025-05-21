@@ -1,6 +1,6 @@
 import { Book } from "./types/books";
 
-export const staticBooks: Book[] = [
+export const staticMusicList: Book[] = [
   {
     id: "0",
     title: "Thank you My Mama",
@@ -71,7 +71,7 @@ export const staticBooks: Book[] = [
     price: 2000.0,
     imageUrl: "/music-icon-bg.jpg",
     fileUrl:
-      "https://res.cloudinary.com/dxibkvmpl/video/upload/v1734608714/mr_lazy_man_ykfido.mp3",
+      "https://res.cloudinary.com/dxibkvmpl/video/upload/v1747843217/kokobilik_w32gne.mp3",
   },
   {
     id: "8",
@@ -90,5 +90,14 @@ export const staticBooks: Book[] = [
     imageUrl: "/music-icon-bg.jpg",
     fileUrl:
       "https://res.cloudinary.com/dxibkvmpl/video/upload/v1734609261/i_get_one_friend_inxn8g.mp3",
+  },
+  {
+    id: "10",
+    title: "Remember Me",
+    artist: "Roy Odoko",
+    price: 2000.0,
+    imageUrl: "/music-icon-bg.jpg",
+    fileUrl:
+      "https://res.cloudinary.com/dxibkvmpl/video/upload/v1747841934/remember_me_audio_thrcco.mp3",
   },
 ];

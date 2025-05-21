@@ -33,9 +33,6 @@ const AboutSection: FC = () => {
             Odoko is the leader of De-Hybrid Band, a recording but not a
             performing musical band.`}
           </p>
-          <button className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-10 py-4 rounded-full hover:bg-orange-700 transition md:ml-8">
-            Read more
-          </button>
         </div>
       </section>
     </>

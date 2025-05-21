@@ -1,6 +1,6 @@
 import { FC, useState, useRef, useContext } from "react";
 import Image from "next/image";
-import { staticBooks } from "@/utils/book_list";
+import { staticMusicList } from "@/utils/book_list";
 import AppContext from "@context/AppContext";
 import { Book, formatToNaira } from "@/utils/types/books";
 
@@ -78,8 +78,8 @@ const MusicCollection: FC = () => {
         <h2 className="text-3xl md:4xl font-bold mb-8 text-center md:text-left">
           MUSIC COLLECTIONS
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {staticBooks.map((album, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+          {staticMusicList.map((album, index) => (
             <div
               key={`${index}-${album.title}`}
               className="bg-fb-grey-900 rounded-lg p-4 w-[85%] flex self-center"
@@ -121,11 +121,11 @@ const MusicCollection: FC = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-8">
+        {/* <div className="flex justify-center mt-8">
           <button className="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition mx-1">
             &lt;
           </button>
-          {[1, 2, 3, 4, "...", staticBooks.length].map((page, index) => (
+          {[1, 2, 3, 4, "...", staticMusicList.length].map((page, index) => (
             <button
               key={`${index}-${page}`}
               className="text-white px-4 py-2 rounded-full mx-1 hover:underline"
@@ -136,7 +136,7 @@ const MusicCollection: FC = () => {
           <button className="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition mx-1">
             &gt;
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

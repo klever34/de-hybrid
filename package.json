@@ -11,6 +11,7 @@
   "dependencies": {
     "flowbite-react": "^0.10.1",
     "next": "14.2.5",
+    "nextjs-google-analytics": "^2.3.7",
     "nodemailer": "^6.10.0",
     "react": "^18",
     "react-dom": "^18",

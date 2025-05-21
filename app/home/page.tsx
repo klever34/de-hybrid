@@ -1,22 +1,13 @@
-"use client";
+import { Metadata } from "next";
+import HomePage from "./HomePage";
 
-import AboutSection from "@components/AboutSection";
-import HeroSection from "@components/HeroSection";
-import MusicCollection from "@components/MusicCollection";
-import PromoSlider from "@components/PromoSlider";
-import VideosCollection from "@components/VideosCollection";
+export const metadata: Metadata = {
+  title: "De-Hybrid",
+  description: "Buy audios and books online",
+};
 
 const Home = (): JSX.Element => {
-  return (
-    <>
-      <HeroSection />
-      <PromoSlider />
-      <AboutSection />
-      <VideosCollection />
-      <MusicCollection />
-      {/* <BooksCollection /> */}
-    </>
-  );
+  return <HomePage />;
 };
 
 export default Home;
