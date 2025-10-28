@@ -2,7 +2,7 @@
 
 import { FC, useState, useRef, useContext } from "react";
 import AppContext from "@context/AppContext";
-import { Book, formatToNaira } from "@/utils/types/books";
+import { Book } from "@/utils/types/books";
 import { staticVideos } from "@/utils/videos_list";
 
 interface CartItem extends Book {
@@ -108,9 +108,9 @@ const VideosCollection: FC = () => {
               <div className="text-center md:text-left px-2">
                 <h3 className="text-lg font-bold">{video.title}</h3>
                 <div className="text-gray-400">{video.artist}</div>
-                <div className="text-orange-500 font-bold mt-2">
+                {/* <div className="text-orange-500 font-bold mt-2">
                   {formatToNaira(video.price)}
-                </div>
+                </div> */}
 
                 {/* Uncomment below to enable Add to Cart */}
                 {/* <button
