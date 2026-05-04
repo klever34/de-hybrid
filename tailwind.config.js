@@ -17,19 +17,21 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
-    },
-    colors: {
-      primary: "#056CF2",
-      danger: "#F57068",
-      "fb-grey": {
-        50: "#E9EEF4",
-        70: "#F8FAFC",
-        100: "#F4F5F6",
-        200: "#E6E6E6",
-        250: "#DDE5EE",
-      },
-      "fb-black": {
-        100: "#000000",
+      colors: {
+        primary: "#056CF2",
+        danger: "#F57068",
+        "fb-grey": {
+          50: "#E9EEF4",
+          70: "#F8FAFC",
+          100: "#F4F5F6",
+          200: "#E6E6E6",
+          250: "#DDE5EE",
+          900: "#1c1c1e",
+          950: "#111113",
+        },
+        "fb-black": {
+          100: "#000000",
+        },
       },
     },
   },

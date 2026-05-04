@@ -121,8 +121,12 @@ const Checkout: FC = () => {
         },
       }));
 
-      alert("Payment was successful!");
-      router.push("/");
+      const params = new URLSearchParams({
+        firstName: form.firstName,
+        total: formatToNaira(totalAmount),
+        reference: reference.reference,
+      });
+      router.push(`/success?${params.toString()}`);
     } else {
       alert(`Payment was unsuccessful`);
     }
